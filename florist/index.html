@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Petal Couture - Premium florist for weddings, engagements, bouquets and event decorations">
+    <meta name="theme-color" content="#d4a5d4">
+    <title>Petal Couture - Premium Florist</title>
+    
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="manifest.json">
+    
+    <!-- PWA Meta Tags -->
+    <meta name="theme-color" content="#d4a5d4">
+    
+    <!-- iOS Support -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="Petal Couture">
+    <link rel="apple-touch-icon" href="flower.png">
+    
+    <!-- Android Chrome -->
+    <meta name="mobile-web-app-capable" content="yes">
+    
+    <!-- Windows -->
+    <meta name="msapplication-TileColor" content="#d4a5d4">
+    <meta name="msapplication-TileImage" content="flower.png">
+    
+    <!-- Preload critical assets -->
+    <link rel="preload" href="style.css" as="style">
+</head>
+
+<body>
+    <!-- Header -->
+    <header>
+        <h1>🌸 Petal Couture 🌸</h1>
+        <p>Where Every Petal Tells a Story</p>
+    </header>
+
+    <!-- Navigation -->
+    <nav>
+        <button onclick="showCategory('home', this)" class="active">Home</button>
+        <button onclick="showCategory('marriage', this)">Marriage</button>
+        <button onclick="showCategory('engagement', this)">Engagement</button>
+        <button onclick="showCategory('bouquet', this)">Bouquets</button>
+        <button onclick="showCategory('birthday', this)">Birthday</button>
+        <button onclick="showCategory('hair', this)">Hair Accessories</button>
+        <button onclick="showCategory('decorations', this)">Event Decorations</button>
+        <button onclick="showCategory('contact', this)">Contact & Delivery</button>
+    </nav>
+
+    <!-- Main Container -->
+    <div class="container">
+        <!-- Home Section -->
+        <div id="home" class="category-section active">
+            <div class="hero-section">
+                <h2>Welcome to Petal Couture</h2>
+                <p>Crafting Beautiful Moments with Nature's Finest Blooms</p>
+            </div>
+
+            <div class="featured-section">
+                <h3>✨ Featured Flowers & Bouquets ✨</h3>
+                <div class="flower-grid">
+                    <div class="flower-card">
+                        <div class="flower-image real-photo" style="background-image: url('flower.png');"></div>
+                        <div class="flower-info">
+                            <h3>Elegant Rose Bouquet</h3>
+                            <p>Premium red roses arranged to perfection</p>
+                            <p>🌹 Fresh & fragrant</p>
+                            <div class="price">₹2,500</div>
+                            <button class="add-to-cart">Add to Cart</button>
+                        </div>
+                    </div>
+
+                    <div class="flower-card">
+                        <div class="flower-image real-photo" style="background-image: url('pic1.png');"></div>
+                        <div class="flower-info">
+                            <h3>Pastel Dream Bouquet</h3>
+                            <p>Soft pink and white mixed flowers</p>
+                            <p>💕 Perfect for any occasion</p>
+                            <div class="price">₹1,800</div>
+                            <button class="add-to-cart">Add to Cart</button>
+                        </div>
+                    </div>
+
+                    <div class="flower-card">
+                        <div class="flower-image real-photo" style="background-image: url('pic2.png');"></div>
+                        <div class="flower-info">
+                            <h3>Lavender Paradise</h3>
+                            <p>Beautiful purple lavender arrangement</p>
+                            <p>💜 Calming & elegant</p>
+                            <div class="price">₹2,200</div>
+                            <button class="add-to-cart">Add to Cart</button>
+                        </div>
+                    </div>
+
+                    <div class="flower-card">
+                        <div class="flower-image real-photo" style="background-image: url('pic3.png');"></div>
+                        <div class="flower-info">
+                            <h3>Sunshine Bouquet</h3>
+                            <p>Bright yellow and orange blooms</p>
+                            <p>☀️ Cheerful & vibrant</p>
+                            <div class="price">₹1,500</div>
+                            <button class="add-to-cart">Add to Cart</button>
+                        </div>
+                    </div>
+
+                    <div class="flower-card">
+                        <div class="flower-image real-photo" style="background-image: url('pic4.png');"></div>
+                        <div class="flower-info">
+                            <h3>Peach Perfection</h3>
+                            <p>Delicate peach roses and peonies</p>
+                            <p>🍑 Romantic & soft</p>
+                            <div class="price">₹3,200</div>
+                            <button class="add-to-cart">Add to Cart</button>
+                        </div>
+                    </div>
+
+                    <div class="flower-card">
+                        <div class="flower-image real-photo" style="background-image: url('pic5.png');"></div>
+                        <div class="flower-info">
+                            <h3>Garden Mix Bouquet</h3>
+                            <p>Assorted seasonal flowers</p>
+                            <p>🌻 Fresh from the garden</p>
+                            <div class="price">₹1,900</div>
+                            <button class="add-to-cart">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Marriage Section -->
+        <div id="marriage" class="category-section">
+            <h2 class="section-title">💒 Wedding Flowers 💒</h2>
+            
+            <div class="customize-panel">
+                <h3>Customize Your Wedding Flowers</h3>
+                <div class="filter-group">
+                    <label>Flower Type</label>
+                    <select onchange="filterFlowers()">
+                        <option>All Flowers</option>
+                        <option>Roses</option>
+                        <option>Lilies</option>
+                        <option>Orchids</option>
+                        <option>Peonies</option>
+                        <option>Tulips</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label>Color Preference</label>
+                    <select onchange="filterFlowers()">
+                        <option>All Colors</option>
+                        <option>White</option>
+                        <option>Red</option>
+                        <option>Pink</option>
+                        <option>Purple</option>
+                        <option>Mixed</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="flower-grid">
+                <div class="flower-card">
+                    <div class="flower-image">🌹</div>
+                    <div class="flower-info">
+                        <h3>Classic Red Rose Arrangement</h3>
+                        <p>Perfect for traditional weddings</p>
+                        <p>🌹 Premium roses, 50 stems</p>
+                        <div class="price">₹4,500</div>
+                        <button class="add-to-cart">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="flower-card">
+                    <div class="flower-image">🌷</div>
+                    <div class="flower-info">
+                        <h3>White Lily Bridal Bouquet</h3>
+                        <p>Elegant and pure</p>
+                        <p>🤍 Fresh lilies, 30 stems</p>
+                        <div class="price">₹3,800</div>
+                        <button class="add-to-cart">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="flower-card">
+                    <div class="flower-image">🌸</div>
+                    <div class="flower-info">
+                        <h3>Pink Peony Paradise</h3>
+                        <p>Romantic and dreamy</p>
+                        <p>💗 Luxury peonies, 40 stems</p>
+                        <div class="price">₹5,200</div>
+                        <button class="add-to-cart">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Engagement Section -->
+        <div id="engagement" class="category-section">
+            <h2 class="section-title">💍 Engagement Flowers 💍</h2>
+            
+            <div class="customize-panel">
+                <h3>Customize Your Engagement Flowers</h3>
+                <div class="filter-group">
+                    <label>Flower Type</label>
+                    <select onchange="filterFlowers()">
+                        <option>All Flowers</option>
+                        <option>Roses</option>
+                        <option>Orchids</option>
+                        <option>Carnations</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label>Color Preference</label>
+                    <select onchange="filterFlowers()">
+                        <option>All Colors</option>
+                        <option>Red & White</option>
+                        <option>Pink</option>
+                        <option>Gold & White</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="flower-grid">
+                <div class="flower-card">
+                    <div class="flower-image">❤️</div>
+                    <div class="flower-info">
+                        <h3>Love Symphony Bouquet</h3>
+                        <p>Red roses with baby's breath</p>
+                        <p>💕 25 premium roses</p>
+                        <div class="price">₹2,800</div>
+                        <button class="add-to-cart">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="flower-card">
+                    <div class="flower-image">🌺</div>
+                    <div class="flower-info">
+                        <h3>Orchid Elegance</h3>
+                        <p>Exotic orchids for special moments</p>
+                        <p>🦋 15 orchid stems</p>
+                        <div class="price">₹3,500</div>
+                        <button class="add-to-cart">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Bouquet Section -->
+        <div id="bouquet" class="category-section">
+            <h2 class="section-title">💐 Beautiful Bouquets 💐</h2>
+            
+            <div class="customize-panel">
+                <h3>Create Your Perfect Bouquet</h3>
+                <div class="filter-group">
+                    <label>Bouquet Size</label>
+                    <select>
+                        <option>Small (10-15 stems)</option>
+                        <option>Medium (20-30 stems)</option>
+                        <option>Large (40+ stems)</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label>Occasion</label>
+                    <select>
+                        <option>Anniversary</option>
+                        <option>Congratulations</option>
+                        <option>Thank You</option>
+                        <option>Just Because</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="flower-grid">
+                <div class="flower-card">
+                    <div class="flower-image">🌻</div>
+                    <div class="flower-info">
+                        <h3>Sunshine Delight</h3>
+                        <p>Bright sunflowers and daisies</p>
+                        <p>☀️ Mixed cheerful blooms</p>
+                        <div class="price">₹1,800</div>
+                        <button class="add-to-cart">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="flower-card">
+                    <div class="flower-image">🌈</div>
+                    <div class="flower-info">
+                        <h3>Rainbow Romance</h3>
+                        <p>Multi-colored roses</p>
+                        <p>🌈 30 mixed roses</p>
+                        <div class="price">₹2,200</div>
+                        <button class="add-to-cart">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Birthday Section -->
+        <div id="birthday" class="category-section">
+            <h2 class="section-title">🎂 Birthday Flowers 🎂</h2>
+            
+            <div class="flower-grid">
+                <div class="flower-card">
+                    <div class="flower-image">🎉</div>
+                    <div class="flower-info">
+                        <h3>Birthday Celebration</h3>
+                        <p>Colorful mixed arrangement</p>
+                        <p>🎈 Balloons included!</p>
+                        <div class="price">₹1,500</div>
+                        <button class="add-to-cart">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="flower-card">
+                    <div class="flower-image">🌺</div>
+                    <div class="flower-info">
+                        <h3>Tropical Birthday Blast</h3>
+                        <p>Exotic tropical flowers</p>
+                        <p>🌴 Vibrant and fun</p>
+                        <div class="price">₹2,000</div>
+                        <button class="add-to-cart">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Hair Accessories Section -->
+        <div id="hair" class="category-section">
+            <h2 class="section-title">🌸 Floral Hair Accessories 🌸</h2>
+            
+            <div class="flower-grid">
+                <div class="flower-card">
+                    <div class="flower-image">🌺</div>
+                    <div class="flower-info">
+                        <h3>Bridal Hair Garland</h3>
+                        <p>Fresh jasmine and roses</p>
+                        <p>👰 Traditional & beautiful</p>
+                        <div class="price">₹800</div>
+                        <button class="add-to-cart">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="flower-card">
+                    <div class="flower-image">🌼</div>
+                    <div class="flower-info">
+                        <h3>Flower Crown</h3>
+                        <p>Mixed seasonal flowers</p>
+                        <p>🌈 Customizable colors</p>
+                        <div class="price">₹1,200</div>
+                        <button class="add-to-cart">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="flower-card">
+                    <div class="flower-image">🌷</div>
+                    <div class="flower-info">
+                        <h3>Hair Clips Set</h3>
+                        <p>Set of 5 floral hair clips</p>
+                        <p>💐 Perfect for mehendi</p>
+                        <div class="price">₹600</div>
+                        <button class="add-to-cart">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Decorations Section -->
+        <div id="decorations" class="category-section">
+            <h2 class="section-title">🎊 Event Decorations 🎊</h2>
+            
+            <div class="decoration-info">
+                <h3>Our Decoration Services</h3>
+                <ul>
+                    <li><strong>Wedding Venue Decoration</strong> - Complete floral setup for mandaps, stages, and entrances</li>
+                    <li><strong>Engagement Party Decor</strong> - Romantic floral arrangements and backdrops</li>
+                    <li><strong>Birthday Parties</strong> - Themed floral decorations for all ages</li>
+                    <li><strong>Corporate Events</strong> - Professional floral arrangements for conferences and celebrations</li>
+                    <li><strong>Baby Showers</strong> - Soft, beautiful floral designs</li>
+                    <li><strong>Anniversary Celebrations</strong> - Elegant and romantic setups</li>
+                </ul>
+            </div>
+
+            <div class="flower-grid">
+                <div class="flower-card">
+                    <div class="flower-image">🏵️</div>
+                    <div class="flower-info">
+                        <h3>Basic Decoration Package</h3>
+                        <p>Entrance arch + 4 table centerpieces</p>
+                        <p>🌸 Perfect for small gatherings</p>
+                        <div class="price">₹15,000</div>
+                        <button class="add-to-cart">Book Now</button>
+                    </div>
+                </div>
+                <div class="flower-card">
+                    <div class="flower-image">🎪</div>
+                    <div class="flower-info">
+                        <h3>Party Decor</h3>
+                        <p>Balloons + Flowers</p>
+                        <div class="price">₹8,500</div>
+                        <button class="add-to-cart">Book Now</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Contact Section -->
+        <div id="contact" class="category-section">
+            <div class="contact-section">
+                <h2>📞 Contact Us</h2>
+
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <h3>📱 Phone</h3>
+                        <p>+91 98765 43210</p>
+                    </div>
+                    <div class="contact-item">
+                        <h3>✉️ Email</h3>
+                        <p>info@petalcouture.com</p>
+                    </div>
+                    <div class="contact-item">
+                        <h3>📍 Address</h3>
+                        <p>Chennai, India</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script src="app.js"></script>
+</body>
+</html>
