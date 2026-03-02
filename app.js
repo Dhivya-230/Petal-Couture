@@ -231,3 +231,29 @@ window.addEventListener('load', () => {
         }
     }
 });
+
+
+document.addEventListener('DOMContentLoaded', () => {
+
+    const cartButtons = document.querySelectorAll('.add-to-cart');
+
+    cartButtons.forEach(button => {
+        button.addEventListener('click', function (e) {
+
+            // Prevent card click effect if any
+            e.stopPropagation();
+
+            // Get product name
+            const productName = this.closest('.flower-card')
+                                   .querySelector('h3')
+                                   .innerText;
+
+            // Use your existing notification system
+            showNotification(
+                '🛒 Added to Cart',
+                `${productName} has been added successfully!`
+            );
+        });
+    });
+
+});
